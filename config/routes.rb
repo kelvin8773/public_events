@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
-  get 'session/new'
-  get 'session/create'
-  get 'session/destroy'
+  root 'pages#home'
+  
+  get '/signin', to: 'sessions#new'
+  post '/signin', to: 'sessions#create'
+  delete '/signout', to: 'sessions#destroy'
+  
+  get '/signup', to: 'users#new'
+  post '/signup', to: 'users#create'
+  
+  
+  get 'pages/home'
+  get 'pages/about'
 
-  root 'page#home'
-
-  get 'page/home'
-  get 'page/about'
-  get 'page/contact'
   resources :users
 
   
