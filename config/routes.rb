@@ -8,11 +8,8 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
   
-  
   get 'pages/home'
   get 'pages/about'
 
   resources :users
-
-  
 end
