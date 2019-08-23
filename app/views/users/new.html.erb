@@ -1,5 +1,29 @@
-<h1>New User</h1>
+<h2> Add New User </h2>
 
-<%= render 'form', user: @user %>
+<%= form_for(@user) do |f| %>
+    <%# Check for errors %>
+    <% if @user.errors.any? %>
+        <%  @user.errors.full_messages.each do |msg| %>
+            <%# display error messages %>
+            <div class="alert alert-danger"><%= msg%>
+        <% end %>
+    <% end %>
+    <div class="form-group">
+        <%= f.text_field :name, class: 'form-control',placeholder: 'Your Name'  %>
+    </div>
+    <div class="form-group">
+        <%= f.text_field :email, class: 'form-control', placeholder: 'Email Address' %>
+    </div>
 
-<%= link_to 'Back', users_path %>
+    <div class="form-group">
+      <%= f.password_field :password, class: 'form-control', placeholder: 'Passoword' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Password Confirm' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit "Sign Up", class:'btn btn-primary' %>
+    </div>
+<% end %>

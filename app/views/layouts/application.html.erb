@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PublicEvents</title>
+    <title>Public Events</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,16 +10,20 @@
   </head>
 
   <body>
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-      <%=  render 'layouts/header' %>
-      
+    <%= render 'layouts/header' %>
+
+    <div class="container">
+
       <% flash.each do |message_type, message| %>
           <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
       <% end %>
+      
+      <div class="p-4">
+        <%= yield %>
+      </div>
 
-      <%= yield %>
-      <%= render 'layouts/footer' %>
     </div>
+
   </body>
 
 </html>

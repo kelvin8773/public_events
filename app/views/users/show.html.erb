@@ -1,14 +1,26 @@
-<p id="notice"><%= notice %></p>
+<% if logged_in? %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+  <div class="row">
+    <div class="col-md-3 ">
+      <%= render 'events/event_form' %>
+  </div>
+    
+  <div class="col-md-6">
+      <h2> Upcoming Events </h2>
+      <%= render @created_events.upcoming_events %>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+      <h2> Past Events </h2>
+      <%= render @created_events.past_events %>
+     
+  </div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+   <div class="col-md-3">
+    <h5> Attending Events</h5>
+      <%= render @attended_events %>
+  </div>
+</div>
+
+<% else %>
+  <h2> Please sign in. <h2>
+  <%= link_to "Sign in", login_path %>
+<% end %>
