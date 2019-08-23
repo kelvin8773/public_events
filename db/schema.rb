@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_22_163411) do
+ActiveRecord::Schema.define(version: 2019_08_23_044401) do
 
   create_table "attendances", force: :cascade do |t|
     t.integer "attendee_id"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_08_22_163411) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+    t.text "avator"
   end
 
 end
