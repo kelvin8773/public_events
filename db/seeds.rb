@@ -8,14 +8,14 @@
 
 User.create!( name:  "John Don",
               email: "john@example.com",
-              avator: Faker::LoremPixel.image(size: '200x200'), 
+              avator: Faker::LoremFlickr.image(size: "200x200", search_terms: ['sport']), 
               password:                 "foobar",
               password_confirmation:    "foobar",
              )
 
 User.create!( name:  "Kelvin Wong",
               email: "kelvin@abc.com",
-              avator: Faker::LoremPixel.image(size: '200x200'),
+              avator: Faker::LoremFlickr.image(size: "200x200", search_terms: ['fitness']),
               password:                 "foobar",
               password_confirmation:    "foobar",
             )
@@ -24,7 +24,7 @@ User.create!( name:  "Kelvin Wong",
 8.times do
   name  = Faker::Name.name
   email = "#{name.split(' ').first.downcase}@abc.com"
-  avator = Faker::LoremPixel.image(size: '200x200') 
+  avator = Faker::LoremFlickr.image(size: "200x200", search_terms: ['avator'])
   password = 'foobar' 
   User.create!( name: name,
                 email:  email,
