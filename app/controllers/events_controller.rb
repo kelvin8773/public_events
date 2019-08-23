@@ -7,10 +7,10 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     
     if @event.save
-      flash[:notice] = "Event Saved!"
+      flash[:success] = "Event Saved!"
       redirect_to root_url
     else
-      flash.now[:error] = "Evnet Can't save!"
+      flash.now[:warning] = "Evnet Can't save!"
       render :new
     end
 
