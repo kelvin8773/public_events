@@ -39,9 +39,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 ## add custom gem (above is rails default)
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
-
 gem 'faker',   '>=1.7.3'
-
 
 
 group :development, :test do
@@ -58,6 +56,8 @@ group :development, :test do
   # of interacting with the browser.
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
+  gem 'database_cleaner'
+
   
 end
 

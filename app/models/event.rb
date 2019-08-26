@@ -7,4 +7,14 @@ class Event < ApplicationRecord
   scope :past_events, -> { where('event_date < :current_date', current_date: DateTime.now) }
   scope :upcoming_events, -> { where('event_date >= :current_date', current_date: DateTime.now) }
 
+  validates :title, presence: true, length: { maximum: 50 }
+  validates :description, presence: true, length: { maximum: 140 }
+  validates :event_date, presence: true
+  validates :location, presence: true
+  validates :creator_id, presence: true
+  
+  validates :email, presence: true, 
+                    length: { maximum: 100 },
+                    format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i }
+
 end

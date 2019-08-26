@@ -3,17 +3,14 @@
 michael:
   name: Michael Example
   email: michael@example.com
-  avatar: http://loremflickr.com/g/400/400/sports,fitness/all
   password_digest: <%= User.digest('password') %>
 
 kelvin:
   name: Kelvin Example
-  email: kelvin@example.com
-  avatar: http://loremflickr.com/g/400/400/fitness
+  email: kelvin@abc.com
   password_digest: <%= User.digest('password') %>
 
 bright:
   name: Bright Example
-  email: bright@example.com
-  avatar: http://loremflickr.com/g/400/400/avatar
+  email: bright@abc.com
   password_digest: <%= User.digest('password') %>
