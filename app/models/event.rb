@@ -13,8 +13,6 @@ class Event < ApplicationRecord
   validates :location, presence: true
   validates :creator_id, presence: true
   
-  validates :email, presence: true, 
-                    length: { maximum: 100 },
-                    format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i }
+  
 
 end

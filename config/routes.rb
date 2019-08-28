@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'attendances/new'
   get 'events/index'
   get 'events/show'
   root 'users#show'

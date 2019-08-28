@@ -21,9 +21,9 @@ User.create!( name:  "Kelvin Wong",
             )
 
 
-8.times do
-  name  = Faker::Name.name
-  email = "#{name.split(' ').first.downcase}@abc.com"
+8.times do |n|
+  name  = Faker::DcComics.name 
+  email = Faker::Internet.safe_email(name: name.split(" ").first.downcase)
   avatar = Faker::LoremFlickr.image(size: "200x200", search_terms: ['avatar'])
   password = 'foobar' 
   User.create!( name: name,
@@ -35,7 +35,7 @@ User.create!( name:  "Kelvin Wong",
 end
 
 30.times do
-  title = Faker::BossaNova.song #=> "Chega de Saudade"
+  title = Faker::DcComics.title 
   description = Faker::GreekPhilosophers.quote #=> "Only the educated are free."
 
   event_date = Faker::Date.between(from: 30.days.ago, to: 30.days.from_now)
