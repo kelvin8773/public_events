@@ -1,38 +1,25 @@
-<% if logged_in? %>
-
-  <div class="row">
-    <div class="col-md-3 ">
-     
-      <div class="card" >
-        <img src=<%= @user.avatar %> class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"> <%= @user.name %> </h5>
-          <p class="card-text"> <%= @user.email %> </p>
-          <a href="#" class="btn btn-primary">Update</a>
-        </div>
+<div class="row">
+  <div class="col-md-3 ">
+    <div class="card" >
+      <img src=<%= current_user.avatar %> class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"> <%= current_user.name %> </h5>
+        <p class="card-text"> <%= current_user.email %> </p>
+        <a href="#" class="btn btn-primary">Update</a>
       </div>
-
-      <hr>
-
-      <%= render 'events/event_form' %>
     </div>
-    
-    <div class="col-md-5">
-      <h5 class="text-info"> Upcoming Events </h5>
-      <%= render @created_events.upcoming_events %>
-      <hr>
-      <h5 class="text-info"> Past Events </h5>
-      <%= render @created_events.past_events %>
-     
-    </div>
+    <hr>
+    <%= render 'events/event_form' %>
+  </div>
+  
+  <div class="col-md-5">
+    <h5 class="text-info"> Upcoming Events </h5>
+    <%= render @attended_events.upcoming %>
+  </div>
 
-    <div class="col-md-4">
-      <h5 class="text-info"> Attending Events</h5>
-        <%= render @attended_events %>
-    </div>
+  <div class="col-md-4">
+    <h5 class="text-info"> Past Events </h5>
+      <%= render @attended_events.past %>
+  </div>
 </div>
 
-<% else %>
-  <h2> Please sign in. <h2>
-  <%= link_to "Sign in", login_path %>
-<% end %>
