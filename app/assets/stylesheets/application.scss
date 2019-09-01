@@ -13,13 +13,22 @@
  */
 
 @import "bootstrap";
+@import "font-awesome";
+
+
+.navbar-logo {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: gray;
+}
 
 
 .nav-user-name {
   font-family: fantasy;
   font-style: italic;
   line-height: 2;
-  font-size: 20px;
+  font-size: 18px;
   color: white;
   font-weight: 500;
 }

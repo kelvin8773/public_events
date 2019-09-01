@@ -1,29 +1,13 @@
-<h2> Add New User </h2>
 
-<%= form_for(@user) do |f| %>
-    <%# Check for errors %>
-    <% if @user.errors.any? %>
-        <%  @user.errors.full_messages.each do |msg| %>
-            <%# display error messages %>
-            <div class="alert alert-danger"><%= msg%>
-        <% end %>
-    <% end %>
-    <div class="form-group">
-        <%= f.text_field :name, class: 'form-control',placeholder: 'Your Name'  %>
-    </div>
-    <div class="form-group">
-        <%= f.text_field :email, class: 'form-control', placeholder: 'Email Address' %>
-    </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mx-auto text-center">
+    <h2> Register </h2>
+    <p>Please Sign up to Join the event!</p>
 
-    <div class="form-group">
-      <%= f.password_field :password, class: 'form-control', placeholder: 'Passoword' %>
-    </div>
+    <%= render 'form' %>
 
-    <div class="form-group">
-      <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Password Confirm' %>
+    <p>Already register? <%= link_to "Login Here", login_path %> instead. </p>
     </div>
-
-    <div class="form-group">
-      <%= f.submit "Sign Up", class:'btn btn-primary' %>
-    </div>
-<% end %>
+  </div>
+</div>

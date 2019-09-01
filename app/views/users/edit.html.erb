@@ -1,0 +1,15 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+     <img src=<%= current_user.avatar%> class="img-thumbnail my-3" >
+    </div>
+    <div class="col-md-6 text-center">
+    <h2><%= @user.first_name %>'s Profile</h2>
+    <p>Update your information Here .... </p>
+
+    <%= render 'form' %>
+
+    </div>
+  </div>
+</div>

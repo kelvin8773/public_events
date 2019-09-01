@@ -12,11 +12,11 @@ class UsersController < ApplicationController
 
   def show
     if logged_in?
-      @event = current_user.events.build
-      @attended_events = current_user.attended_events
+      @user = User.find(params[:id])
+      @event = @user.events.build
+      @attended_events = @user.attended_events
     end
   end
-
 
   def create
     @user = User.new(user_params)
@@ -28,7 +28,20 @@ class UsersController < ApplicationController
      else 
       render 'new'
     end
+  end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      flash[:success] = "Profile updated!"
+      redirect_to @user
+    else
+      render 'edit'
+    end
   end
 
 

@@ -5,27 +5,20 @@
     <%= event.creator.name.capitalize %> 
   </div>
 
-  <div class="post-text font-italic ">
+  <%# <div class="post-text font-italic ">
     <strong>Description: </strong>
     <%= event.description %>
+  <%# </div> %> 
+
+  <div class="post-text my-2">
+    <%= fa_icon "calendar", class: "mr-2" %> 
+    <%= event.event_date %>
   </div>
 
-  <% if params[:action] == 'show' %>
-    <div class="post-text ">
-      <strong>Location: </strong> <%= event.location %>
-    </div>
-
-    <div class="post-text">
-      <strong>Event Date: </strong> <%= event.event_date %>
-    </div>
-
-    <div class="post-text">
-      <strong> Attendees: </strong>
-        <% event.attendees.each do |x| %>
-          <span><%= x.name.capitalize %></span> 
-        <% end %>
-    </div>
-  <% end %>
+  <div class="post-text my-2">
+    <%= fa_icon "location-arrow", class: "mr-2" %>
+    <%= event.location %>
+  </div>
 
 </div>
   

@@ -14,7 +14,7 @@ User.create!( name:  "John Done",
              )
 
 
-5.times do |n|
+6.times do |n|
   name  = Faker::DcComics.name 
   email = Faker::Internet.safe_email(name: name.split(" ").first.downcase)
   search_terms = ['fitness', 'sport', 'beach', 'avatar', 'Internet', 'China', 'office'].sample
@@ -28,11 +28,11 @@ User.create!( name:  "John Done",
   )
 end
 
-15.times do
+18.times do
   title = Faker::DcComics.title 
   description = Faker::GreekPhilosophers.quote #=> "Only the educated are free."
 
-  event_date = Faker::Date.between(from: 30.days.ago, to: 30.days.from_now)
+  event_date = Faker::Date.between(from: 15.days.ago, to: 90.days.from_now)
   location = Faker::Address.street_address + ', ' +
   Faker::Address.city
   creator_id = User.all.ids.sample

@@ -3,13 +3,19 @@
     <div class="card" >
       <img src=<%= current_user.avatar %> class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title"> <%= current_user.name %> </h5>
-        <p class="card-text"> <%= current_user.email %> </p>
-        <a href="#" class="btn btn-primary">Update</a>
+        <h5 class="card-title"> <%= @user.name %> </h5>
+        <p class="card-text"> <%= @user.email %> </p>
+
+        <% if current_user? @user %>  
+          <%# <a href="#" class="btn btn-primary">Update</a> %>
+          <%= link_to "Update", edit_user_path(current_user), class: "btn btn-primary" %>
+        <% end %>
       </div>
     </div>
-    <hr>
-    <%= render 'events/event_form' %>
+      <% if current_user? @user %>
+        <hr>
+        <%= render 'events/event_form' %>
+      <% end %>
   </div>
   
   <div class="col-md-5">

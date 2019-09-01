@@ -18,4 +18,12 @@ class User < ApplicationRecord
     BCrypt::Password.create(string, cost: cost)
   end
 
+  def first_name
+    self.name.split(" ").first
+  end
+
+  def last_name(user)
+    self.name.split(" ").last
+  end
+
 end

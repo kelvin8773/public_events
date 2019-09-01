@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
 
-  get '/profile', to: 'users#show'
+  # get '/profile', to: 'users#show'
   
   resources :users
   resources :events
