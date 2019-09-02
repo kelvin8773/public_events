@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create!( name:  "John Done",
-              email: "john@example.com",
+              email: "john_done@yahoo.com",
               avatar: Faker::LoremFlickr.image(size: "200x200", search_terms: ['sport']), 
               password:                 "foobar",
               password_confirmation:    "foobar",
