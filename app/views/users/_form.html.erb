@@ -21,6 +21,8 @@
         <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Password Confirm' %>
       </div>
 
+      <%= f.hidden_field :avatar, value: 'https://via.placeholder.com/150' %>
+
       <div class="form-group">
         <%= f.submit "Submit", class:'btn btn-primary btn-block' %>
       </div>

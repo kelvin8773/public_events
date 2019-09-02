@@ -1,13 +1,12 @@
 <div class="row">
   <div class="col-md-3 ">
     <div class="card" >
-      <img src=<%= current_user.avatar %> class="card-img-top" alt="...">
+      <img src=<%= @user.avatar %> class="card-img-top" >
       <div class="card-body">
         <h5 class="card-title"> <%= @user.name %> </h5>
         <p class="card-text"> <%= @user.email %> </p>
 
         <% if current_user? @user %>  
-          <%# <a href="#" class="btn btn-primary">Update</a> %>
           <%= link_to "Update", edit_user_path(current_user), class: "btn btn-primary" %>
         <% end %>
       </div>
