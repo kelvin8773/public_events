@@ -29,6 +29,7 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
+
         <div class="row">
             <h5 class="col-md-4"> Who Organized? </h5>
             <span class="col-md-6 text-capitalize font-italic"> 
@@ -63,8 +64,34 @@
          <%= @event.event_date %>
         </span>
 
-    
+        <hr>
+        <div>
+            <% if @event.pasted? %>  
+                <p class="btn btn-secondary btn-block">Event is finished!</p>
+            <% elsif @event.attended?(current_user.id) %>
+                <p class="text-center">You joined this event!</p>
+                <%= form_for @attendance,url:attendance_path, method: :delete , data: {confirm: "Are you sure?" } do |f| %>
+                <div class="form-group">
+                    <%= f.hidden_field :attendee_id, value: current_user.id %>
+                    <%= f.hidden_field :attended_event_id, value: @event.id %>
 
+                    <%= f.submit "Leave this Event", class: "btn btn-danger btn-block" %>
+                </div>
+                <% end %>
+
+            <% else %>
+                <%= form_for(@attendance) do |f| %>
+                <div class="form-group">
+                    <%= f.hidden_field :attendee_id, value: current_user.id %>
+                    <%= f.hidden_field :attended_event_id, value: @event.id %>
+
+                    <%= f.submit "Join", class: "btn btn-primary btn-block" %>
+                </div>
+                <% end %>
+            <% end %> 
+
+
+        </div>
 
     </div>
 </div>

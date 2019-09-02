@@ -26,6 +26,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find_by(id: params[:id]) 
+    @attendance = @event.attendances.build
   end
 
   def edit
