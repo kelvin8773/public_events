@@ -2,7 +2,7 @@
 
 This is one of the projects derived from [Michael Hartl](https://www.michaelhartl.com/)'s [Ruby and Rails Tutorial Book](https://www.railstutorial.org/book). In this project I am to create a site similar to "Eventbrite" which allows users to create events and then manage user Sign Up. Users can create events and send invitations and parties. Events take place at a specific date and at a location.
 
-[Project Demo - To come later](https://public-events-278.herokuapp.com/)
+[Project Demo](https://public-events-278.herokuapp.com/)
 
 ## Note
 
