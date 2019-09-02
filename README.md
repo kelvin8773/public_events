@@ -1,6 +1,8 @@
 # Public Events Demo Project
 
-This is one of the projects on Ruby and Rails Tutorial. in this project we are to create a site similar to "Eventbrite" which allows users to create events and then manage user signups. Users can create events and send invitations and parties. Events take place at a specific date and at a location.
+This is one of the projects derived from [Michael Hartl](https://www.michaelhartl.com/)'s [Ruby and Rails Tutorial Book](https://www.railstutorial.org/book). In this project I am to create a site similar to "Eventbrite" which allows users to create events and then manage user Sign Up. Users can create events and send invitations and parties. Events take place at a specific date and at a location.
+
+[Project Demo - To come later](https://public-events-278.herokuapp.com/)
 
 ## Note
 
@@ -32,10 +34,8 @@ rails server
 
 ## Reference
 
-[Odin Project Requirement](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations)
+- [Odin Project Requirement](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations)
 
-[Project Demo - To come later](http://#)
+- [Conectp of Scopes in Rails](https://guides.rubyonrails.org/active_record_querying.html#scopes)
 
-[Conectp of Scopes in Rails](https://guides.rubyonrails.org/active_record_querying.html#scopes)
-
-[Active Records Basic](https://guides.rubyonrails.org/active_record_basics.html)
+- [Active Records Basic](https://guides.rubyonrails.org/active_record_basics.html)
