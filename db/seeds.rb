@@ -16,7 +16,7 @@ User.create!( name:  "John Done",
 
 6.times do |n|
   name  = Faker::DcComics.name 
-  email = Faker::Internet.safe_email(name: name.split(" ").first.downcase)
+  email = Faker::Internet.safe_email(name: name.split(" ").first.downcase + '_' + name.split(" ").last.downcase)
   search_terms = ['fitness', 'sport', 'beach', 'avatar', 'Internet', 'China', 'office'].sample
   avatar = Faker::LoremFlickr.image(size: "200x200", search_terms: [search_terms])
   password = 'foobar' 
@@ -28,11 +28,12 @@ User.create!( name:  "John Done",
   )
 end
 
-18.times do
+20.times do
   title = Faker::DcComics.title 
-  description = Faker::GreekPhilosophers.quote #=> "Only the educated are free."
+  # description = Faker::GreekPhilosophers.quote #=> "Only the educated are free."
+  description = Faker::Lorem.paragraph_by_chars(number: 240, supplemental: false) 
 
-  event_date = Faker::Date.between(from: 15.days.ago, to: 90.days.from_now)
+  event_date = Faker::Date.between(from: 10.days.ago, to: 90.days.from_now)
   location = Faker::Address.street_address + ', ' +
   Faker::Address.city
   creator_id = User.all.ids.sample
