@@ -7,15 +7,20 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    
-    if @event.save
-      flash[:success] = "Event Saved!"
-      @attendance = Attendance.new(attendee_id: params[:event][:creator_id].to_i, attended_event_id: @event.id )
-      @attendance.save
-      redirect_to root_url
+
+    if @event.event_date >= Date.today 
+      if @event.save
+        flash[:success] = "Event Saved!"
+        @attendance = Attendance.new(attendee_id: params[:event][:creator_id].to_i, attended_event_id: @event.id )
+        @attendance.save
+        redirect_to user_path(current_user)
+      else
+        flash.now[:warning] = "Evnet Can't save!"
+        render :new
+      end
     else
-      flash.now[:warning] = "Evnet Can't save!"
-      render :new
+      flash[:warning] = "New Event's Date can't earlier than today!"
+      redirect_to user_path(current_user)
     end
 
   end
