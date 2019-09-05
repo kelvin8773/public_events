@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'root path test', type: :feature do
-  
   scenario 'login Fail Test' do
     visit login_path
 
@@ -21,7 +22,4 @@ RSpec.describe 'root path test', type: :feature do
 
     expect(page).to have_content('You are logged in!')
   end
-
-  
-
 end
