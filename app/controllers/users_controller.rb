@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if logged_in?
+    return unless logged_in?
       @user = User.find(params[:id])
       @event = @user.events.build
       @attended_events = @user.attended_events
