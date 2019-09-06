@@ -12,11 +12,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    return unless logged_in?
-      @user = User.find(params[:id])
-      @event = @user.events.build
-      @attended_events = @user.attended_events
-    end
+    @user = User.find(params[:id])
+    @event = @user.events.build
+    @attended_events = @user.attended_events
   end
 
   def create
